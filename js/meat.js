@@ -7,7 +7,7 @@ var Sandwich = (function(sandwich){
 	{item: "Human", price: 666.00 }
 	];
 
-	sandwhich.getMeat = function(){
+	sandwich.getMeats = function(){
 		return meats;
 	};
 
