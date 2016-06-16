@@ -1,5 +1,5 @@
 var DOMHandler = (function(){
-
+	var partTypes = ["Meats", "Veggies", "Breads", "Cheeses", "Condiments"];
 	var allParts = [];
 	allParts.push(Sandwich.getMeats());
 	allParts.push(Sandwich.getVeggies());
@@ -9,11 +9,32 @@ var DOMHandler = (function(){
 
 	for (let i = 0; i < allParts.length; i++){
 		currentPart = allParts[i];
+		let currentNewDiv = document.createElement("div");
+		let newDivID = document.createAttribute("id");
+		newDivID.value = `${partTypes[i]}`;
+		currentNewDiv.setAttributeNode(newDivID);
+		document.getElementById("pickers").appendChild(currentNewDiv);
+
+		let currentNewSelect = document.createElement("select");
+
+		currentNewDiv.appendChild(currentNewSelect);
+
 		for(let j = 0; j < currentPart.length; j++){
-			currentItem = currentPart[i].item;
-			currentPrice = currentPrice[i].price;
-			
-			
+			let currentItem = currentPart[j].item;
+			let currentPrice = currentPart[j].price;
+			let targetDiv = currentNewSelect;
+
+			let newOption = document.createElement("option");
+			let newOptionValue = document.createAttribute("value");
+			newOptionValue.value = currentItem;
+			newOption.innerText = `${currentItem}`;
+
+			newOption.setAttributeNode(newOptionValue);
+			currentNewSelect.appendChild(newOption);
+
+
+
+
 		}
 	}
 
