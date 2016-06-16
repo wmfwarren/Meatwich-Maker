@@ -16,7 +16,9 @@ var DOMHandler = (function(){
 		document.getElementById("pickers").appendChild(currentNewDiv);
 
 		let currentNewSelect = document.createElement("select");
-
+		let newSelectClass = document.createAttribute("class");
+		newSelectClass.value = "col-xs-2";
+		currentNewSelect.setAttributeNode(newSelectClass);
 		currentNewDiv.appendChild(currentNewSelect);
 
 		for(let j = 0; j < currentPart.length; j++){
