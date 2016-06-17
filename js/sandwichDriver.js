@@ -28,19 +28,22 @@ var Sandwich = (function(sandwich){
 				break;
 		}
 
-		displayItem(selectedItem, targetArray);
+		Sandwich.displayItem(selectedItem, targetArray);
 
 	};
 
-	sandwich.displayItem = function (item, array){
-		for (let i = 0; i < array.length; i ++){
-			if (array[i].item = item){
-				totalPrice += array[i].price;
+	sandwich.displayItem = function (itemToAdd, array){
+		var sandwichZone = document.getElementById("sandwichArea");
 
-				
+		//for (let i = 0; i < array.length; i ++){
+			if (array.item = itemToAdd){
+				totalPrice += array.price;
 
+				let newItem = document.createElement("div")
+				newItem.innerText = itemToAdd;
+				sandwichZone.appendChild(newItem);
 			}
-		}
+		//}
 	};
 
 	return sandwich;
