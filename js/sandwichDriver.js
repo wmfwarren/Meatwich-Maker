@@ -35,7 +35,6 @@ var Sandwich = (function(sandwich){
 	sandwich.displayItem = function (itemToAdd, array){
 		var sandwichZone = document.getElementById("sandwichArea");
 
-		//for (let i = 0; i < array.length; i ++){
 			if (array.item = itemToAdd){
 				totalPrice += array.price;
 
@@ -43,7 +42,6 @@ var Sandwich = (function(sandwich){
 				newItem.innerText = itemToAdd;
 				sandwichZone.appendChild(newItem);
 			}
-		//}
 	};
 
 	return sandwich;
